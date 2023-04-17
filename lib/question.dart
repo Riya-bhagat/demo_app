@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
   // const ({ Key? key }) : super(key: key);
-  String questionText;
+  final String questionText;
 
   Question(this.questionText);
 
@@ -13,7 +13,10 @@ class Question extends StatelessWidget {
         margin: EdgeInsets.all(10),
         child: Text(
           questionText,
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(
+              fontSize: 25,
+              color: Color.fromARGB(255, 172, 25, 50),
+              fontStyle: FontStyle.italic),
           textAlign: TextAlign.center,
         ));
   }
