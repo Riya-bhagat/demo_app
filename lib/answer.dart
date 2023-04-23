@@ -8,6 +8,7 @@ Answer(this.selectHandler , this.answerText);
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.all(10),
       // color: Colors.blue,
       child: ElevatedButton(
             child: Text(answerText),

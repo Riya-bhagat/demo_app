@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import './question.dart';
 import './answer.dart';
 
@@ -60,12 +59,11 @@ class _MyAppState extends State<MyApp> {
         ]
       }
     ];
-    double width;
     return MaterialApp(
         home: Scaffold(
             // ignore: prefer_const_constructors
             appBar: AppBar(
-              title: Text('Quiz App'),
+              title: const Text('Quiz App'),
               // actions: Icons.menu,
             ),
             body: Center(
@@ -79,11 +77,14 @@ class _MyAppState extends State<MyApp> {
                           Question(
                             question[_questionIndex]['questionText'].toString(),
                           ),
-                          ...(question[_questionIndex]!['answer']
-                                  as List<String>)
-                              .map((answer) {
-                            return Answer(_answerQuestion, answer);
-                          }).toList()
+                          Padding(
+                              padding: EdgeInsets.only(top:30),
+                              child: Column(
+                                  children: (question[_questionIndex]['answers']
+                                          as List<String>)
+                                      .map((answer) =>
+                                          Answer(_answerQuestion, answer))
+                                      .toList()))
                         ],
                       ),
                     )))));
